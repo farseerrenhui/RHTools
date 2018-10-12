@@ -1,0 +1,63 @@
+﻿<Window x:Class="RHTools.Storyboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Storyboard" Height="200" Width="600">
+    <Grid Margin="6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="60"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <!--红跑道-->
+        <Border BorderBrush="Gray" BorderThickness="1">
+            <Ellipse Name="ballR" Height="36" Width="36" Fill="Red" HorizontalAlignment="Left">
+                <Ellipse.RenderTransform>
+                    <TranslateTransform x:Name="ttR"/>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+        </Border>
+        <!--绿跑道-->
+        <Border BorderBrush="Gray" BorderThickness="1" Grid.Row="1">
+            <Ellipse Name="ballG" Height="36" Width="36" Fill="Green" HorizontalAlignment="Left">
+                <Ellipse.RenderTransform>
+                    <TranslateTransform x:Name="ttG"/>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+        </Border>
+        <!--蓝跑道-->
+        <Border BorderBrush="Gray" BorderThickness="1" Grid.Row="2">
+            <Ellipse Name="ballB" Height="36" Width="36" Fill="Blue" HorizontalAlignment="Left">
+                <Ellipse.RenderTransform>
+                    <TranslateTransform x:Name="ttB"/>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+        </Border>
+        <Button Content="GO" Grid.Column="1" Grid.RowSpan="3">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <BeginStoryboard>
+                        <Storyboard Duration="0:0:0.6">
+                            <!--Red-->
+                            <DoubleAnimation Duration="0:0:0.6" To="400" Storyboard.TargetName="ttR" Storyboard.TargetProperty="X"/>
+                            <!--Green-->
+                            <DoubleAnimationUsingKeyFrames Duration="0:0:0.6" Storyboard.TargetName="ttG" Storyboard.TargetProperty="X">
+                                <SplineDoubleKeyFrame KeyTime="0:0:0.6" Value="400" KeySpline="1,0,0,1"/>
+                            </DoubleAnimationUsingKeyFrames>
+                            <!--Blue-->
+                            <DoubleAnimationUsingKeyFrames Duration="0:0:0.6" Storyboard.TargetName="ttB" Storyboard.TargetProperty="X">
+                                <SplineDoubleKeyFrame KeyTime="0:0:0.6" Value="400" KeySpline="0,1,1,0"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+    </Grid>
+</Window>

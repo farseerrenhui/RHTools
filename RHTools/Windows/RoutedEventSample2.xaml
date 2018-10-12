@@ -1,0 +1,25 @@
+﻿<Window x:Class="RHTools.RoutedEventSample2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RHTools"
+        local:TimeButton.ReportTime="ReportTimeHandler"
+        mc:Ignorable="d"
+        Title="RoutedEventSample2" Height="330" Width="330">
+    <Grid Name="grid_0" local:TimeButton.ReportTime="ReportTimeHandler">
+        <StackPanel Background="LightCoral" Name="stackpanel_0" local:TimeButton.ReportTime="ReportTimeHandler">
+            <Grid Name="grid_1" Background="LightBlue" Margin="8" local:TimeButton.ReportTime="ReportTimeHandler">
+                <Grid Name="grid_2" Background="LawnGreen" Margin="8" local:TimeButton.ReportTime="ReportTimeHandler">
+                    <Grid Name="grid_3" Background="LightSeaGreen" Margin="8" local:TimeButton.ReportTime="ReportTimeHandler">
+                        <StackPanel Name="stackpanel_1" Background="LightSkyBlue" Margin="8" local:TimeButton.ReportTime="ReportTimeHandler">
+                            <ListBox Name="listbox1_1" Margin="8" Height="180" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                            <local:TimeButton x:Name="timeButton" Margin="8" Content="ReportTime"  
+                                              local:TimeButton.ReportTime="ReportTimeHandler"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>

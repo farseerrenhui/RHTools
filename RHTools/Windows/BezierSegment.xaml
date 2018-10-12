@@ -1,0 +1,106 @@
+﻿<Window x:Class="RHTools.BezierSegment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RHTools"
+        mc:Ignorable="d"
+        Title="BezierSegment" Height="680" Width="1000">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+        <Grid ShowGridLines="True" Width="800" Height="600">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!--三次方贝塞尔曲线-->
+            <Path Grid.RowSpan="6" Grid.ColumnSpan="8" Stroke="Red" StrokeThickness="1" ToolTip="三次方贝塞尔曲线">
+                <Path.Data>
+                    <PathGeometry>
+                        <PathFigure StartPoint="0,0">
+                            <BezierSegment Point1="{Binding ElementName=tbPoint1,Path=Text}" Point2="{Binding ElementName=tbPoint2,Path=Text}" Point3="{Binding ElementName=tbPoint3,Path=Text}"/>
+                        </PathFigure>
+                    </PathGeometry>
+                </Path.Data>
+            </Path>
+            <!--二次方贝塞尔曲线-->
+            <Path Grid.RowSpan="6" Grid.ColumnSpan="8" Stroke="Green" StrokeThickness="1" ToolTip="二次方贝塞尔曲线">
+                <Path.Data>
+                    <PathGeometry>
+                        <PathFigure StartPoint="0,0">
+                            <QuadraticBezierSegment Point1="{Binding ElementName=tb2Point1, Path=Text}" Point2="{Binding ElementName=tb2Point2, Path=Text}"/>
+                        </PathFigure>
+                    </PathGeometry>
+                </Path.Data>
+            </Path>
+
+            <Canvas>
+                <Path Name="StartPoint" Grid.RowSpan="6" Grid.ColumnSpan="8" Fill="Blue" Margin="0,0" HorizontalAlignment="Left" VerticalAlignment="Top" ToolTip="StartPoint">
+                    <Path.Data>
+                        <EllipseGeometry RadiusX="5" RadiusY="5"/>
+                    </Path.Data>
+                </Path>
+                <Path Name="Point1" Grid.RowSpan="6" Grid.ColumnSpan="8" Fill="Red" Margin="{Binding ElementName=tbPoint1,Path=Text}" HorizontalAlignment="Left" VerticalAlignment="Top" ToolTip="Point1">
+                    <Path.Data>
+                        <EllipseGeometry RadiusX="5" RadiusY="5"/>
+                    </Path.Data>
+                </Path>
+                <Path Name="Point2" Grid.RowSpan="6" Grid.ColumnSpan="8" Fill="Red" Margin="{Binding ElementName=tbPoint2,Path=Text}" HorizontalAlignment="Left" VerticalAlignment="Top" ToolTip="Point2">
+                    <Path.Data>
+                        <EllipseGeometry RadiusX="5" RadiusY="5"/>
+                    </Path.Data>
+                </Path>
+                <Path Name="Point3" Grid.RowSpan="6" Grid.ColumnSpan="8" Fill="Red" Margin="{Binding ElementName=tbPoint3,Path=Text}" HorizontalAlignment="Left" VerticalAlignment="Top" ToolTip="Point3">
+                    <Path.Data>
+                        <EllipseGeometry RadiusX="5" RadiusY="5"/>
+                    </Path.Data>
+                </Path>
+                <Path Name="GreenPoint1" Grid.RowSpan="6" Grid.ColumnSpan="8" Fill="Green" Margin="{Binding ElementName=tb2Point1,Path=Text}" HorizontalAlignment="Left" VerticalAlignment="Top" ToolTip="GreenPoint1">
+                    <Path.Data>
+                        <EllipseGeometry RadiusX="5" RadiusY="5"/>
+                    </Path.Data>
+                </Path>
+                <Path Name="GreenPoint2" Grid.RowSpan="6" Grid.ColumnSpan="8" Fill="Green" Margin="{Binding ElementName=tb2Point2,Path=Text}" HorizontalAlignment="Left" VerticalAlignment="Top" ToolTip="GreenPoint2">
+                    <Path.Data>
+                        <EllipseGeometry RadiusX="5" RadiusY="5"/>
+                    </Path.Data>
+                </Path>
+
+            </Canvas>
+
+        </Grid>
+        <Grid Grid.Column="1">
+            <StackPanel Margin="20,0">
+                <TextBlock Text="三次方贝塞尔曲线" Foreground="Red"/>
+                <TextBlock Text="Point1" Foreground="Red"/>
+                <TextBox Name="tbPoint1" Text="200,0" HorizontalContentAlignment="Right" Foreground="Red"/>
+                <TextBlock Text="Point2" Foreground="Red"/>
+                <TextBox Name="tbPoint2" Text="50,200" HorizontalContentAlignment="Right" Foreground="Red"/>
+                <TextBlock Text="Point3" Foreground="Red"/>
+                <TextBox Name="tbPoint3" Text="300,200" HorizontalContentAlignment="Right" Foreground="Red"/>
+                <TextBlock Text="二次方贝塞尔曲线" Foreground="Green"/>
+                <TextBlock Text="Point1" Foreground="Green"/>
+                <TextBox Name="tb2Point1" Text="150,200" HorizontalContentAlignment="Right" Foreground="Green"/>
+                <TextBlock Text="Point2" Foreground="Green"/>
+                <TextBox Name="tb2Point2" Text="300,0" HorizontalContentAlignment="Right" Foreground="Green"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,33 @@
+﻿<Window x:Class="RHTools.BitmapEffect"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RHTools"
+        mc:Ignorable="d"
+        Title="BitmapEffect" Height="300" Width="200">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Image Source="../img/dw.png" Grid.Column="0" Grid.Row="0"/>
+        <TextBlock Text="NoBitmapEffect" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
+        <Image Source="../img/dw.png" Grid.Column="0" Grid.Row="1">
+            <Image.BitmapEffect>
+                <DropShadowBitmapEffect Direction="45" Opacity="0.6" Color="Red" ShadowDepth="8" Softness="0.8"/>
+            </Image.BitmapEffect>
+        </Image>
+        <TextBlock Text="DropShadowBitmapEffect" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
+        <Image Source="../img/dw.png" Grid.Column="0" Grid.Row="2">
+            <Image.BitmapEffect>
+                <BlurBitmapEffect Radius="3"/>
+            </Image.BitmapEffect>
+        </Image>
+        <TextBlock Text="BlurBitmapEffect" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
+    </Grid>
+</Window>

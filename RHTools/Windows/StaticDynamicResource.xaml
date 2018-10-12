@@ -1,0 +1,19 @@
+﻿<Window x:Class="RHTools.StaticDynamicResource"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="StaticDynamicResource" Height="150" Width="240">
+    <Window.Resources>
+        <TextBlock x:Key="res1" Text="TextBlock资源" Foreground="Red"/>
+        <TextBlock x:Key="res2" Text="TextBlock资源" Foreground="Red"/>
+    </Window.Resources>
+    <Grid>
+        <StackPanel>
+            <Button Margin="5" Content="{StaticResource res1}" ToolTip="StaticResource"/>
+            <Button Margin="5" Content="{DynamicResource res2}" ToolTip="DynamicResource"/>
+            <Button Margin="5" Content="ChangeResource" Click="Button_Click_ChangeResource"/>
+        </StackPanel>
+    </Grid>
+</Window>

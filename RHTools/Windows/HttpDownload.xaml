@@ -1,0 +1,13 @@
+﻿<Window x:Class="RHTools.HttpDownload"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RHTools"
+        mc:Ignorable="d"
+        Title="HttpDownload" Height="240" Width="480">
+    <StackPanel Margin="10">
+        <TextBox Name="TextBoxUrl" ToolTip="必须完整路径,可下载网页" Height="24"/>
+        <Button Content="Download" Height="24" Click="Button_Click"/>
+    </StackPanel>
+</Window>

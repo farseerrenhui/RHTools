@@ -1,0 +1,31 @@
+﻿<Window x:Class="RHTools.ZipFile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="ZipFile" Width="400" Height="450">
+    <StackPanel>
+        <StackPanel>
+            <TextBlock Text="待压缩目录"/>
+            <TextBox Name="TextBox1"/>
+            <TextBlock Text="目标zip"/>
+            <TextBox Name="TextBox2"/>
+            <Button Content="SharpZIP压缩" Click="Button_Click_Compress"/>
+        </StackPanel>
+        <StackPanel Margin="0,10">
+            <TextBlock Text="待解压zip"/>
+            <TextBox Name="TextBox3"/>
+            <TextBlock Text="解压目录"/>
+            <TextBox Name="TextBox4"/>
+            <Button Content="SharpZIP解压" Click="Button_Click_Extract"/>
+        </StackPanel>
+        <StackPanel Margin="0,10">
+            <TextBlock Text="from目录"/>
+            <TextBox Name="TextBox5"/>
+            <TextBlock Text="to目录"/>
+            <TextBox Name="TextBox6"/>
+            <Button Content="拷贝" Click="Button_Click_Copy"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

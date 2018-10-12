@@ -1,0 +1,21 @@
+﻿<Window x:Class="RHTools.RoutedEventSample3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="RoutedEventSample3" Height="240" Width="320">
+    <Grid>
+        <StackPanel>
+            <Grid Name="gridPerson" Margin="8" Background="OrangeRed" ToolTip="gridPerson">
+                <Button Name="buttonPerson" Content="buttonStudent" Margin="5"/>
+            </Grid>
+            <StackPanel Name="stackPanelPerson" Margin="8" Background="CadetBlue" ToolTip="stackPanelPerson">
+                <TextBlock Text="通过Button的Click事件来生成事件,发送事件." Margin="5"/>
+                <Button Name="buttonPerson_1" Content="更改Name" Click="buttonPerson_1_Click" Margin="5"/>
+                <Button Name="buttonPerson_2" Content="发送事件" Click="buttonPerson_2_Click" Margin="5"/>
+                <Button Name="buttonPerson_3" Content="更改Name and 发送事件" Click="buttonPerson_3_Click" Margin="5"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,28 @@
+﻿<Window x:Class="RHTools.WindowFunnel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RHTools"
+        xmlns:vis="clr-namespace:Visifire.Charts;assembly=WPFVisifire.Charts"
+        mc:Ignorable="d"
+        Title="WindowFunnel" Height="480" Width="640">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <vis:Chart Grid.Row="1">
+            <vis:Chart.Series>
+                <vis:DataSeries RenderAs="SectionFunnel" ShowInLegend="True">
+                    <vis:DataSeries.DataPoints>
+                        <vis:DataPoint AxisXLabel="x1" YValue="100"/>
+                        <vis:DataPoint AxisXLabel="x2" YValue="200"/>
+                        <vis:DataPoint AxisXLabel="x3" YValue="300"/>
+                    </vis:DataSeries.DataPoints>
+                </vis:DataSeries>
+            </vis:Chart.Series>
+        </vis:Chart>
+    </Grid>
+</Window>

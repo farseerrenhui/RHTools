@@ -1,0 +1,22 @@
+﻿<Window x:Class="RHTools.OracleManagedDataAccess"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="OracleManagedDataAccess" Height="320" Width="480">
+    <StackPanel>
+        <TextBlock Text="host:"/>
+        <TextBox Name="TextBoxHost" Text="127.0.0.1"/>
+        <TextBlock Text="db:"/>
+        <TextBox Name="TextBoxDb" Text="orcl"/>
+        <TextBlock Text="account:"/>
+        <TextBox Name="TextBoxAccount" Text="root"/>
+        <TextBlock Text="password:"/>
+        <TextBox Name="TextBoxPassword" Text="farseer"/>
+        <Button Content="Connect" Click="Button_Click_Connect"/>
+        <TextBox Name="TextBoxSQL" Text="select * from T_USER"/>
+        <Button Name="ButtonExecute" Content="Execute" IsEnabled="False" Click="Button_Click_Execute"/>
+        <DataGrid Name="DataGridResult"/>
+    </StackPanel>
+</Window>

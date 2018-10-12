@@ -1,0 +1,60 @@
+﻿<Window x:Class="RHTools.Animation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RHTools"
+        mc:Ignorable="d"
+        Title="Animation" Height="768" Width="1024">
+    <StackPanel>
+        <Button Content="Move1" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Button_Click1">
+            <Button.RenderTransform>
+                <TranslateTransform x:Name="tt" X="0" Y="0"/>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="Move2" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Button_Click2">
+            <Button.RenderTransform>
+                <TranslateTransform x:Name="tt2" X="0" Y="0"/>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="Move3" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Button_Click3">
+            <Button.RenderTransform>
+                <TranslateTransform x:Name="tt3" X="0" Y="0"/>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="Move4" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Button_Click4">
+            <Button.RenderTransform>
+                <TranslateTransform x:Name="tt4" X="0" Y="0"/>
+            </Button.RenderTransform>
+        </Button>
+        <Grid>
+            <Grid.Resources>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <EventTrigger RoutedEvent="Button.MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation To="240" Duration="0:0:0.2" Storyboard.TargetProperty="Width"/>
+                                    <DoubleAnimation To="60" Duration="0:0:0.2" Storyboard.TargetProperty="Height"/>
+                                    <DoubleAnimation To="18" Duration="0:0:0.2" Storyboard.TargetProperty="FontSize"/>
+                                    <ThicknessAnimation To="5" Duration="0:0:0.2" Storyboard.TargetProperty="BorderThickness"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="Button.MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Duration="0:0:0.2" Storyboard.TargetProperty="Width"/>
+                                    <DoubleAnimation Duration="0:0:0.2" Storyboard.TargetProperty="Height"/>
+                                    <DoubleAnimation To="12" Duration="0:0:0.2" Storyboard.TargetProperty="FontSize"/>
+                                    <ThicknessAnimation To="0" Duration="0:0:0.2" Storyboard.TargetProperty="BorderThickness"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Grid.Resources>
+            <Button Width="160" Height="32" Content="EventTriggerButton" Click="Button_Click_EventTriggerButton"></Button>
+        </Grid>
+    </StackPanel>
+</Window>

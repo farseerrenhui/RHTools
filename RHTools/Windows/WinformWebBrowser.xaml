@@ -1,0 +1,23 @@
+﻿<Window x:Class="RHTools.WinformWebBrowser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:local="clr-namespace:RHTools"
+        mc:Ignorable="d"
+        Title="WinformWebBrowser" Height="450" Width="800"
+        Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="26"/>
+            <RowDefinition Height="26"/>
+        </Grid.RowDefinitions>
+        <WindowsFormsHost x:Name="BrowserHost">
+            <wf:WebBrowser x:Name="WFWebBrowser" />
+        </WindowsFormsHost>
+        <Button Content="DesignModeOn" Grid.Row="1" Click="Button_Click_DesignModeOn"/>
+        <Button Content="DesignModeOff" Grid.Row="2" Click="Button_Click_DesignModeOff"/>
+    </Grid>
+</Window>

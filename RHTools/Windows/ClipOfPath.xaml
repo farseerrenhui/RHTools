@@ -1,0 +1,19 @@
+﻿<Window x:Class="RHTools.ClipOfPath"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RHTools"
+        mc:Ignorable="d"
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowStyle="None"
+        Title="ClipOfPath" Height="450" Width="800"
+        MouseDown="Window_MouseDown">
+    <Grid Background="DeepSkyBlue">
+        <Path Name="clipPath" Visibility="Hidden">
+            <Path.Data>
+                M 10,10 H 90 L 110,25 V 55 L 90,65 L 110,75 V 110 H 80 V 80 H 40 V 110 H 10 Z M 40,30 H 80 V 50 H 40 Z</Path.Data>
+        </Path>
+    </Grid>
+</Window>

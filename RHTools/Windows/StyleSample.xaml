@@ -1,0 +1,137 @@
+﻿<Window x:Class="RHTools.StyleSample"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RHTools"
+        mc:Ignorable="d"
+        Title="Style" Height="450" Width="500">
+    <Window.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    <TabControl>
+        <TabItem Header="NullStyle">
+            <Grid>
+                <Grid.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="FontFamily" Value="幼圆"/>
+                        <Setter Property="FontSize" Value="25"/>
+                        <Setter Property="FontStyle" Value="Oblique"/>
+                    </Style>
+                </Grid.Resources>
+                <StackPanel>
+                    <TextBlock Text="TextBlock1"/>
+                    <TextBlock Text="TextBlock2"/>
+                    <TextBlock Text="TextBlock3"/>
+                    <TextBlock Text="TextBlock4" Style="{x:Null}"/>
+                </StackPanel>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Trigger">
+            <Grid>
+                <Grid.Resources>
+                    <Style TargetType="CheckBox">
+                        <Style.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Trigger.Setters>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Setter Property="Foreground" Value="Red"/>
+                                </Trigger.Setters>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Resources>
+                <StackPanel>
+                    <CheckBox Content="色不异空"/>
+                    <CheckBox Content="空不异色"/>
+                    <CheckBox Content="色即是空"/>
+                    <CheckBox Content="空即是色"/>
+                </StackPanel>
+            </Grid>
+        </TabItem>
+        <TabItem Header="MultiTrigger">
+            <Grid>
+                <Grid.Resources>
+                    <Style TargetType="CheckBox">
+                        <Style.Triggers>
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsChecked" Value="True"/>
+                                    <Condition Property="Content" Value="无线鼠标"/>
+                                </MultiTrigger.Conditions>
+                                <MultiTrigger.Setters>
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Setter Property="Foreground" Value="Red"/>
+                                    <Setter Property="FontSize" Value="30"/>
+                                </MultiTrigger.Setters>
+                            </MultiTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Resources>
+                <StackPanel>
+                    <CheckBox Content="巧克力键盘"/>
+                    <CheckBox Content="机械键盘"/>
+                    <CheckBox Content="无线鼠标"/>
+                    <CheckBox Content="有线鼠标"/>
+                    <Button Margin="10" Width="80" Height="24" Content="Button"></Button>
+                </StackPanel>
+            </Grid>
+        </TabItem>
+        <TabItem Header="DataTrigger">
+            <Grid>
+                <Grid.Resources>
+                    <local:LengthToBorderConverter x:Key="lbConverter"/>
+                    <Style TargetType="TextBox">
+                        <Style.Triggers>
+                            <!--不明确指出Source的值,Binding会将控件的DataContext属性当做数据源而非把控件自身当做数据源-->
+                            <!--为了将控件自己作为数据源,使用RelativeSource-->
+                            <DataTrigger Binding="{Binding RelativeSource={x:Static RelativeSource.Self},Path=Text.Length,Converter={StaticResource lbConverter}}" Value="false">
+                                <Setter Property="BorderBrush" Value="Red"/>
+                                <Setter Property="BorderThickness" Value="1"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Resources>
+                <StackPanel>
+                    <TextBox FontSize="24" Width="240" ToolTip="长度小于10,显示红色边框"/>
+                </StackPanel>
+            </Grid>
+        </TabItem>
+        <TabItem Header="DataTemplate and DataTrigger">
+            <Grid>
+                <Grid.Resources>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="ContentTemplate">
+                            <Setter.Value>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding ID}" Width="60"/>
+                                        <TextBlock Text="{Binding Name}" Width="120"/>
+                                        <TextBlock Text="{Binding Age}" Width="60"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding ID}" Value="4"/>
+                                    <Condition Binding="{Binding Name}" Value="Tom"/>
+                                </MultiDataTrigger.Conditions>
+                                <MultiDataTrigger.Setters>
+                                    <Setter Property="Foreground" Value="Red"/>
+                                </MultiDataTrigger.Setters>
+                            </MultiDataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Resources>
+                <StackPanel>
+                    <ListBox Name="listBox1"/>
+                </StackPanel>
+            </Grid>
+        </TabItem>
+    </TabControl>
+</Window>

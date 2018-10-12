@@ -1,0 +1,512 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EB5EA009-61E7-4154-B5BA-9A978C635048}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RHTools</RootNamespace>
+    <AssemblyName>RHTools</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.WPF.Controls, Version=7.8.0.12, Culture=neutral, PublicKeyToken=65042117d0a83cbc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\DevComponents.WPF.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.WPF.Metro, Version=7.8.0.12, Culture=neutral, PublicKeyToken=335804e47774a7d8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\DevComponents.WPF.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.0.0, Culture=neutral, PublicKeyToken=ad1060f781377a81, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>dll\Microsoft.mshtml.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.121.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.109.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WPFVisifire.Charts, Version=5.1.7.0, Culture=neutral, PublicKeyToken=0cd785983078370b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\WPFVisifire.Charts.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="BubbleGrid.xaml.cs">
+      <DependentUpon>BubbleGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Index.xaml.cs">
+      <DependentUpon>Index.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IndexButton.cs" />
+    <Compile Include="Windows\AdornerSample.xaml.cs">
+      <DependentUpon>AdornerSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BindingSample.xaml.cs">
+      <DependentUpon>BindingSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\CommandSample.xaml.cs">
+      <DependentUpon>CommandSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ConverterSample.xaml.cs">
+      <DependentUpon>ConverterSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\EncryptionAndDecryption.xaml.cs">
+      <DependentUpon>EncryptionAndDecryption.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\EnvironmentInfos.xaml.cs">
+      <DependentUpon>EnvironmentInfos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PictureAddLogo.xaml.cs">
+      <DependentUpon>PictureAddLogo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\RoutedEventSample2.xaml.cs">
+      <DependentUpon>RoutedEventSample2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Animation.xaml.cs">
+      <DependentUpon>Animation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ArcSegment.xaml.cs">
+      <DependentUpon>ArcSegment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BezierSegment.xaml.cs">
+      <DependentUpon>BezierSegment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BitmapEffect.xaml.cs">
+      <DependentUpon>BitmapEffect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ClipOfImage.xaml.cs">
+      <DependentUpon>ClipOfImage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ClipOfPath.xaml.cs">
+      <DependentUpon>ClipOfPath.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\CursorDIYandMouseEventFlag.xaml.cs">
+      <DependentUpon>CursorDIYandMouseEventFlag.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\DesktopDPI.xaml.cs">
+      <DependentUpon>DesktopDPI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ExcelMicrosoftOleDb.xaml.cs">
+      <DependentUpon>ExcelMicrosoftOleDb.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\FileInfos.xaml.cs">
+      <DependentUpon>FileInfos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\GifImage.xaml.cs">
+      <DependentUpon>GifImage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\HttpDownload.xaml.cs">
+      <DependentUpon>HttpDownload.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\OracleManagedDataAccess.xaml.cs">
+      <DependentUpon>OracleManagedDataAccess.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PathData.xaml.cs">
+      <DependentUpon>PathData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PopupBox.xaml.cs">
+      <DependentUpon>PopupBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PopupBoxWindow.xaml.cs">
+      <DependentUpon>PopupBoxWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\RegexTool.xaml.cs">
+      <DependentUpon>RegexTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SizedCanvas.cs" />
+    <Compile Include="Windows\DependencyProperty.xaml.cs">
+      <DependentUpon>DependencyProperty.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\RoutedEventSample.xaml.cs">
+      <DependentUpon>RoutedEventSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\RoutedEventSample3.xaml.cs">
+      <DependentUpon>RoutedEventSample3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Splash.xaml.cs">
+      <DependentUpon>Splash.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\SQLiteSample.xaml.cs">
+      <DependentUpon>SQLiteSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\StaticDynamicResource.xaml.cs">
+      <DependentUpon>StaticDynamicResource.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Storyboard.xaml.cs">
+      <DependentUpon>Storyboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\StyleButtonSample.xaml.cs">
+      <DependentUpon>StyleButtonSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\StyleSample.xaml.cs">
+      <DependentUpon>StyleSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\TemplateSample.xaml.cs">
+      <DependentUpon>TemplateSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Transform.xaml.cs">
+      <DependentUpon>Transform.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ViewboxWindow.xaml.cs">
+      <DependentUpon>ViewboxWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Win32HardwareInfos.xaml.cs">
+      <DependentUpon>Win32HardwareInfos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\WinformWebBrowser.xaml.cs">
+      <DependentUpon>WinformWebBrowser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ZipFile.xaml.cs">
+      <DependentUpon>ZipFile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFStyle\WindowBrush.xaml.cs">
+      <DependentUpon>WindowBrush.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WPFStyle\WindowRandomLinearBrush.xaml.cs">
+      <DependentUpon>WindowRandomLinearBrush.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TableElement.cs" />
+    <Compile Include="Windows\TableWindow.xaml.cs">
+      <DependentUpon>TableWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VideoElement.cs" />
+    <Compile Include="Windows\WindowBubbleGrid.xaml.cs">
+      <DependentUpon>WindowBubbleGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\WindowFunnel.xaml.cs">
+      <DependentUpon>WindowFunnel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\WindowMediaElementTest.xaml.cs">
+      <DependentUpon>WindowMediaElementTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\WindowTableTest.xaml.cs">
+      <DependentUpon>WindowTableTest.xaml</DependentUpon>
+    </Compile>
+    <Page Include="BubbleGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Index.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Windows\AdornerSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\BindingSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\CommandSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ConverterSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\EncryptionAndDecryption.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\EnvironmentInfos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\PictureAddLogo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\RoutedEventSample2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Animation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ArcSegment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\BezierSegment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\BitmapEffect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ClipOfImage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ClipOfPath.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\CursorDIYandMouseEventFlag.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DesktopDPI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ExcelMicrosoftOleDb.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\FileInfos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\GifImage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\HttpDownload.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\OracleManagedDataAccess.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\PathData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\PopupBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\PopupBoxWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\RegexTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DependencyProperty.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\RoutedEventSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\RoutedEventSample3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Splash.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SQLiteSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\StaticDynamicResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Storyboard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\StyleButtonSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\StyleSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\TemplateSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Transform.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ViewboxWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Win32HardwareInfos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\WinformWebBrowser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ZipFile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFStyle\WindowBrush.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WPFStyle\WindowRandomLinearBrush.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\TableWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\WindowBubbleGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\WindowFunnel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\WindowMediaElementTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\WindowTableTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Resource Include="resources\Consolas.TTF" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dll\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="dll\Microsoft.mshtml.dll" />
+    <Content Include="dll\Oracle.ManagedDataAccess.dll" />
+    <None Include="resources\cw.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="SQLite.Interop.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="dll\System.Data.SQLite.dll" />
+    <Content Include="eCharts\bmap.js" />
+    <Content Include="eCharts\demo.html" />
+    <Content Include="eCharts\demo1.html" />
+    <Content Include="eCharts\demo2.html" />
+    <Content Include="dll\DevComponents.WPF.Controls.dll" />
+    <Content Include="dll\DevComponents.WPF.Metro.dll" />
+    <Content Include="dll\WPFVisifire.Charts.dll" />
+    <Content Include="eCharts\echarts.js" />
+    <Content Include="eCharts\life-expectancy.js" />
+    <Content Include="eCharts\lines-bus.js" />
+    <Resource Include="img\icon\password.png" />
+    <Resource Include="img\icon\user.png" />
+    <Resource Include="img\icon\Bomber.png" />
+    <Resource Include="img\icon\Fighter.png" />
+    <Resource Include="img\dw.png" />
+    <Resource Include="img\fw.png" />
+    <None Include="resources\Kitty-Arrow.cur">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="img\wn.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Resource Include="eCharts\readme.txt" />
+    <Resource Include="img\green.gif" />
+    <Resource Include="img\red.gif" />
+    <Resource Include="img\rowline1.png" />
+    <Resource Include="img\rowline2.png" />
+    <Resource Include="img\2.png" />
+    <Resource Include="img\headerline.png" />
+    <Resource Include="img\1.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
