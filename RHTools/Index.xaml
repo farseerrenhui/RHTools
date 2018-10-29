@@ -47,6 +47,7 @@
             <ScrollViewer>
                 <StackPanel>
                     <local:IndexButton Content="Animation"/>
+                    <local:IndexButton Content="Graphic"/>
                     <local:IndexButton Content="Storyboard"/>
                     <local:IndexButton Content="StyleSample"/>
                     <local:IndexButton Content="StyleButtonSample"/>

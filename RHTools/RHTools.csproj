@@ -114,6 +114,9 @@
     <Compile Include="Windows\EnvironmentInfos.xaml.cs">
       <DependentUpon>EnvironmentInfos.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Graphic.xaml.cs">
+      <DependentUpon>Graphic.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\PictureAddLogo.xaml.cs">
       <DependentUpon>PictureAddLogo.xaml</DependentUpon>
     </Compile>
@@ -273,6 +276,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\EnvironmentInfos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Graphic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
