@@ -1,0 +1,46 @@
+﻿<Window x:Class="RHTools.ChineseToLetter"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RHTools"
+        mc:Ignorable="d"
+        Title="汉字转字母" Height="450" Width="800"
+        Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="27"/>
+            <RowDefinition Height="32"/>
+        </Grid.RowDefinitions>
+        <Border BorderBrush="Gray" BorderThickness="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="转换前" Foreground="LightGray" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Text="转大写" Grid.Column="1" Foreground="LightGray" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Text="转小写" Grid.Column="2" Foreground="LightGray" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Text="转首字母大写" Grid.Column="3" Foreground="LightGray" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <ScrollViewer Name="ScrollViewerTextBoxSource" VerticalScrollBarVisibility="Auto" ScrollChanged="ScrollViewer_ScrollChanged" BorderThickness="1" BorderBrush="Gray">
+                    <TextBox Name="TextBoxSource" AcceptsReturn="True" TextWrapping="Wrap" Background="Transparent"
+                     TextChanged="TextBoxSource_TextChanged" LostFocus="TextBoxSource_LostFocus"/>
+                </ScrollViewer>
+                <ScrollViewer Name="ScrollViewerTextBoxTargetBig" Grid.Column="1" VerticalScrollBarVisibility="Auto" ScrollChanged="ScrollViewer_ScrollChanged" BorderThickness="1" BorderBrush="Gray">
+                    <TextBox Name="TextBoxTargetBig" IsReadOnly="True" AcceptsReturn="True" TextWrapping="Wrap" Background="Transparent" VerticalScrollBarVisibility="Auto"/>
+                </ScrollViewer>
+                <ScrollViewer Name="ScrollViewerTextBoxTargetSmall" Grid.Column="2" VerticalScrollBarVisibility="Auto" ScrollChanged="ScrollViewer_ScrollChanged" BorderThickness="1" BorderBrush="Gray">
+                    <TextBox Name="TextBoxTargetSmall" IsReadOnly="True" AcceptsReturn="True" TextWrapping="Wrap" Background="Transparent" VerticalScrollBarVisibility="Auto"/>
+                </ScrollViewer>
+                <ScrollViewer Name="ScrollViewerTextBoxTargetBigFirst" Grid.Column="3" VerticalScrollBarVisibility="Auto" ScrollChanged="ScrollViewer_ScrollChanged" BorderThickness="1" BorderBrush="Gray">
+                    <TextBox Name="TextBoxTargetBigFirst" IsReadOnly="True" AcceptsReturn="True" TextWrapping="Wrap" Background="Transparent" VerticalScrollBarVisibility="Auto"/>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+        <TextBlock Name="TextBlockTotal" Text="行数:0" VerticalAlignment="Center" Margin="5,0" Grid.Row="1"/>
+        <Button Name="ButtonConvert" Grid.Row="2" Content="转换" FontSize="16" FontWeight="Bold" Click="ButtonConvert_Click"/>
+    </Grid>
+</Window>

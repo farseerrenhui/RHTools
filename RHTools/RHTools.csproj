@@ -102,6 +102,9 @@
     <Compile Include="Windows\BindingSample.xaml.cs">
       <DependentUpon>BindingSample.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\ChineseToLetter.xaml.cs">
+      <DependentUpon>ChineseToLetter.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\CommandSample.xaml.cs">
       <DependentUpon>CommandSample.xaml</DependentUpon>
     </Compile>
@@ -260,6 +263,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\BindingSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ChineseToLetter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

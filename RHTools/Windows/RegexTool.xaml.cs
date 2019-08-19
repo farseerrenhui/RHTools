@@ -26,7 +26,14 @@ namespace RHTools
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(Regex.IsMatch(TextBoxString.Text.Trim(), TextBoxRegex.Text.Trim()).ToString());
+            try
+            {
+                MessageBox.Show(Regex.IsMatch(TextBoxString.Text.Trim(), TextBoxRegex.Text.Trim()).ToString());
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("语法错误");
+            }
         }
     }
 }

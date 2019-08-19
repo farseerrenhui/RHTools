@@ -13,10 +13,14 @@ namespace RHTools
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            foreach (String s in Directory.EnumerateFiles(TextBoxPath.Text))
+            try
             {
-                TextBoxFiles.AppendText(s + "\n");
+                foreach (String s in Directory.EnumerateFiles(TextBoxPath.Text))
+                {
+                    TextBoxFiles.AppendText(s + "\n");
+                }
             }
+            catch (Exception) { }
         }
     }
 }

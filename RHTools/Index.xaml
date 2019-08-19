@@ -21,77 +21,91 @@
             <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
         </Style>
     </Window.Resources>
-    <TabControl>
-        <TabItem Header="Tool">
-            <ScrollViewer>
-                <StackPanel>
-                    <local:IndexButton Content="WindowMediaElementTest"/>
-                    <local:IndexButton Content="HttpDownload"/>
-                    <local:IndexButton Content="FileInfos"/>
-                    <local:IndexButton Content="EnvironmentInfos"/>
-                    <local:IndexButton Content="ZipFile"/>
-                    <local:IndexButton Content="RegexTool"/>
-                    <local:IndexButton Content="ExcelMicrosoftOleDb"/>
-                    <local:IndexButton Content="DesktopDPI"/>
-                    <local:IndexButton Content="OracleManagedDataAccess"/>
-                    <local:IndexButton Content="SQLiteSample"/>
-                    <local:IndexButton Content="GifImage"/>
-                    <local:IndexButton Content="WinformWebBrowser"/>
-                    <local:IndexButton Content="Splash"/>
-                    <local:IndexButton Content="PictureAddLogo"/>
-                    <local:IndexButton Content="EncryptionAndDecryption"/>
-                </StackPanel>
-            </ScrollViewer>
-        </TabItem>
-        <TabItem Header="WPF">
-            <ScrollViewer>
-                <StackPanel>
-                    <local:IndexButton Content="Animation"/>
-                    <local:IndexButton Content="Graphic"/>
-                    <local:IndexButton Content="Storyboard"/>
-                    <local:IndexButton Content="StyleSample"/>
-                    <local:IndexButton Content="StyleButtonSample"/>
-                    <local:IndexButton Content="TemplateSample"/>
-                    <local:IndexButton Content="PopupBoxWindow"/>
-                    <local:IndexButton Content="ViewboxWindow"/>
-                    <local:IndexButton Content="PathData"/>
-                    <local:IndexButton Content="ArcSegment"/>
-                    <local:IndexButton Content="BezierSegment"/>
-                    <local:IndexButton Content="ClipOfPath"/>
-                    <local:IndexButton Content="ClipOfImage"/>
-                    <local:IndexButton Content="BitmapEffect"/>
-                    <local:IndexButton Content="Transform"/>
-                    <local:IndexButton Content="DependencyPropertySample"/>
-                    <local:IndexButton Content="RoutedEventSample"/>
-                    <local:IndexButton Content="RoutedEventSample2"/>
-                    <local:IndexButton Content="RoutedEventSample3"/>
-                    <local:IndexButton Content="StaticDynamicResource"/>
-                    <local:IndexButton Content="AdornerSample"/>
-                    <local:IndexButton Content="ConverterSample"/>
-                    <local:IndexButton Content="CommandSample"/>
-                    <local:IndexButton Content="BindingSample"/>
-                </StackPanel>
-            </ScrollViewer>
-        </TabItem>
-        <TabItem Header="VISU">
-            <ScrollViewer>
-                <StackPanel>
-                    <local:IndexButton Content="WindowBubbleGrid"/>
-                    <local:IndexButton Content="WindowFunnel"/>
-                    <local:IndexButton Content="WindowTableTest"/>
-                    <local:IndexButton Content="TableWindow"/>
-                    <local:IndexButton Content="WPFStyle.WindowBrush"/>
-                    <local:IndexButton Content="WPFStyle.WindowRandomLinearBrush"/>
-                </StackPanel>
-            </ScrollViewer>
-        </TabItem>
-        <TabItem Header="System">
-            <ScrollViewer>
-                <StackPanel>
-                    <local:IndexButton Content="CursorDIYandMouseEventFlag"/>
-                    <local:IndexButton x:Name="Win32HardwareInfos" Content="Win32HardwareInfos"/>
-                </StackPanel>
-            </ScrollViewer>
-        </TabItem>
-    </TabControl>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <DockPanel>
+            <Button DockPanel.Dock="Right" Width="60" Content="Clear" Margin="2" Click="Button_Click_Clear"/>
+            <TextBox Name="TextBoxName" Margin="2" FontSize="18" TextChanged="TextBoxName_TextChanged" TextAlignment="Center" VerticalContentAlignment="Center"/>
+        </DockPanel>
+        <TabControl Name="TabControlContainer" Grid.Row="1">
+            <TabItem Header="Tool">
+                <ScrollViewer>
+                    <StackPanel>
+                        <local:IndexButton Content="ChineseToLetter"/>
+                        <local:IndexButton Content="WindowMediaElementTest"/>
+                        <local:IndexButton Content="HttpDownload"/>
+                        <local:IndexButton Content="FileInfos"/>
+                        <local:IndexButton Content="EnvironmentInfos"/>
+                        <local:IndexButton Content="ZipFile"/>
+                        <local:IndexButton Content="RegexTool"/>
+                        <local:IndexButton Content="ExcelMicrosoftOleDb"/>
+                        <local:IndexButton Content="DesktopDPI"/>
+                        <local:IndexButton Content="OracleManagedDataAccess"/>
+                        <local:IndexButton Content="SQLiteSample"/>
+                        <local:IndexButton Content="GifImage"/>
+                        <local:IndexButton Content="WinformWebBrowser"/>
+                        <local:IndexButton Content="Splash"/>
+                        <local:IndexButton Content="PictureAddLogo"/>
+                        <local:IndexButton Content="EncryptionAndDecryption"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="WPF">
+                <ScrollViewer>
+                    <StackPanel>
+                        <local:IndexButton Content="Animation"/>
+                        <local:IndexButton Content="Graphic"/>
+                        <local:IndexButton Content="Storyboard"/>
+                        <local:IndexButton Content="StyleSample"/>
+                        <local:IndexButton Content="StyleButtonSample"/>
+                        <local:IndexButton Content="TemplateSample"/>
+                        <local:IndexButton Content="PopupBoxWindow"/>
+                        <local:IndexButton Content="ViewboxWindow"/>
+                        <local:IndexButton Content="PathData"/>
+                        <local:IndexButton Content="ArcSegment"/>
+                        <local:IndexButton Content="BezierSegment"/>
+                        <local:IndexButton Content="ClipOfPath"/>
+                        <local:IndexButton Content="ClipOfImage"/>
+                        <local:IndexButton Content="BitmapEffect"/>
+                        <local:IndexButton Content="Transform"/>
+                        <local:IndexButton Content="DependencyPropertySample"/>
+                        <local:IndexButton Content="RoutedEventSample"/>
+                        <local:IndexButton Content="RoutedEventSample2"/>
+                        <local:IndexButton Content="RoutedEventSample3"/>
+                        <local:IndexButton Content="StaticDynamicResource"/>
+                        <local:IndexButton Content="AdornerSample"/>
+                        <local:IndexButton Content="ConverterSample"/>
+                        <local:IndexButton Content="CommandSample"/>
+                        <local:IndexButton Content="BindingSample"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="VISU">
+                <ScrollViewer>
+                    <StackPanel>
+                        <local:IndexButton Content="WindowBubbleGrid"/>
+                        <local:IndexButton Content="WindowFunnel"/>
+                        <local:IndexButton Content="WindowTableTest"/>
+                        <local:IndexButton Content="TableWindow"/>
+                        <local:IndexButton Content="WPFStyle.WindowBrush"/>
+                        <local:IndexButton Content="WPFStyle.WindowRandomLinearBrush"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="System">
+                <ScrollViewer>
+                    <StackPanel>
+                        <local:IndexButton Content="CursorDIYandMouseEventFlag"/>
+                        <local:IndexButton x:Name="Win32HardwareInfos" Content="Win32HardwareInfos"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+        </TabControl>
+        <ScrollViewer Name="ScrollViewerContainer" Grid.Row="1" Visibility="Hidden">
+            <StackPanel Name="StackPanelContainer" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+        </ScrollViewer>
+    </Grid>
 </Window>
