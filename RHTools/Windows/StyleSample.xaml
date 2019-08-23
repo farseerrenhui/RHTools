@@ -83,7 +83,7 @@
         <TabItem Header="DataTrigger">
             <Grid>
                 <Grid.Resources>
-                    <local:LengthToBorderConverter x:Key="lbConverter"/>
+                    <local:LengthToBoolConverter x:Key="lbConverter"/>
                     <Style TargetType="TextBox">
                         <Style.Triggers>
                             <!--不明确指出Source的值,Binding会将控件的DataContext属性当做数据源而非把控件自身当做数据源-->
@@ -96,7 +96,8 @@
                     </Style>
                 </Grid.Resources>
                 <StackPanel>
-                    <TextBox FontSize="24" Width="240" ToolTip="长度小于10,显示红色边框"/>
+                    <TextBox FontSize="24" Width="240" Margin="2" ToolTip="长度小于10且失去焦点时显示红色边框"/>
+                    <TextBox FontSize="24" Width="240" Margin="2" ToolTip="长度小于10且失去焦点时显示红色边框"/>
                 </StackPanel>
             </Grid>
         </TabItem>

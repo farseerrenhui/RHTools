@@ -6,13 +6,37 @@
         xmlns:local="clr-namespace:RHTools"
         mc:Ignorable="d"
         Title="RegexTool" Height="300" Width="300">
-    <Grid>
-        <StackPanel>
-            <TextBlock Text="Regex"/>
-            <TextBox Name="TextBoxRegex"/>
-            <TextBlock Text="String"/>
-            <TextBox Name="TextBoxString"/>
-            <Button Content="Try" Click="Button_Click"/>
-        </StackPanel>
+    <Grid Margin="5">
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+            <Style TargetType="TextBox">
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="TextWrapping" Value="Wrap"/>
+                <Setter Property="AcceptsReturn" Value="True"/>
+                <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="27"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Regex"/>
+        <TextBox Grid.Row="1" Name="TextBoxRegex"/>
+        <TextBlock Grid.Row="2" Text="String"/>
+        <TextBox Grid.Row="3" Name="TextBoxString"/>
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="25"/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Match" Click="Button_Click"/>
+            <Button Grid.Column="1" Content="?" Click="Button_Click_Help"/>
+        </Grid>
     </Grid>
 </Window>

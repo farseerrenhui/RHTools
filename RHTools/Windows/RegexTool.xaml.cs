@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -34,6 +35,12 @@ namespace RHTools
             {
                 MessageBox.Show("语法错误");
             }
+        }
+
+        private void Button_Click_Help(object sender, RoutedEventArgs e)
+        {
+            string fileRegexHtml = Environment.CurrentDirectory + "\\resources\\regex.html";
+            Process.Start(fileRegexHtml);
         }
     }
 }

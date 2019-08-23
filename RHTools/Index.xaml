@@ -7,7 +7,8 @@
         xmlns:local="clr-namespace:RHTools"
         WindowStartupLocation="CenterScreen"
         FontFamily="./resources/#Consolas"
-        Title="Index" Height="600" Width="480">
+        Title="Index" Height="600" Width="480"
+        PreviewKeyDown="Window_PreviewKeyDown">
     <Window.Resources>
         <Style TargetType="TabItem">
             <Setter Property="FontSize" Value="15"/>
@@ -28,7 +29,8 @@
         </Grid.RowDefinitions>
         <DockPanel>
             <Button DockPanel.Dock="Right" Width="60" Content="Clear" Margin="2" Click="Button_Click_Clear"/>
-            <TextBox Name="TextBoxName" Margin="2" FontSize="18" TextChanged="TextBoxName_TextChanged" TextAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBox Name="TextBoxName" Margin="2" FontSize="16" TextAlignment="Center" VerticalContentAlignment="Center"
+                     TextChanged="TextBoxName_TextChanged" PreviewKeyDown="TextBoxName_PreviewKeyDown"/>
         </DockPanel>
         <TabControl Name="TabControlContainer" Grid.Row="1">
             <TabItem Header="Tool">

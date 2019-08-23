@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>img\main.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevComponents.WPF.Controls, Version=7.8.0.12, Culture=neutral, PublicKeyToken=65042117d0a83cbc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -483,6 +486,10 @@
     <Content Include="dll\ICSharpCode.SharpZipLib.dll" />
     <Content Include="dll\Microsoft.mshtml.dll" />
     <Content Include="dll\Oracle.ManagedDataAccess.dll" />
+    <Resource Include="img\main.ico" />
+    <None Include="resources\regex.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="resources\cw.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
