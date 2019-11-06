@@ -37,9 +37,11 @@
                 <ScrollViewer>
                     <StackPanel>
                         <local:IndexButton Content="ChineseToLetter"/>
+                        <local:IndexButton Content="ReplaceTool"/>
                         <local:IndexButton Content="WindowMediaElementTest"/>
                         <local:IndexButton Content="HttpDownload"/>
                         <local:IndexButton Content="FileInfos"/>
+                        <local:IndexButton Content="FileNameBatch"/>
                         <local:IndexButton Content="EnvironmentInfos"/>
                         <local:IndexButton Content="ZipFile"/>
                         <local:IndexButton Content="RegexTool"/>
@@ -52,6 +54,7 @@
                         <local:IndexButton Content="Splash"/>
                         <local:IndexButton Content="PictureAddLogo"/>
                         <local:IndexButton Content="EncryptionAndDecryption"/>
+                        <local:IndexButton Content="XML2JSON"/>
                     </StackPanel>
                 </ScrollViewer>
             </TabItem>

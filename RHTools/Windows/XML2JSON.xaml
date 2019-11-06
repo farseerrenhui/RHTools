@@ -1,0 +1,28 @@
+﻿<Window x:Class="RHTools.XML2JSON"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RHTools"
+        mc:Ignorable="d"
+        Title="XML2JSON" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="32"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" BorderThickness="1" BorderBrush="Gray" Margin="2">
+                <TextBox Name="TextBoxSource" AcceptsReturn="True" TextWrapping="Wrap" Background="Transparent" VerticalScrollBarVisibility="Auto"/>
+            </ScrollViewer>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" BorderThickness="1" BorderBrush="Gray" Margin="2" Grid.Column="1">
+                <TextBox Name="TextBoxTarget" AcceptsReturn="True" TextWrapping="Wrap" Background="Transparent" VerticalScrollBarVisibility="Auto" IsReadOnly="True"/>
+            </ScrollViewer>
+        </Grid>
+        <Button Grid.Row="1" Content="Convert" Click="Button_Click"/>
+    </Grid>
+</Window>

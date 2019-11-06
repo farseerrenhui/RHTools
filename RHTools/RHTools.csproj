@@ -56,6 +56,10 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>dll\Microsoft.mshtml.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Oracle.ManagedDataAccess, Version=4.121.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>dll\Oracle.ManagedDataAccess.dll</HintPath>
@@ -120,11 +124,20 @@
     <Compile Include="Windows\EnvironmentInfos.xaml.cs">
       <DependentUpon>EnvironmentInfos.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\FileNameBatch.xaml.cs">
+      <DependentUpon>FileNameBatch.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Graphic.xaml.cs">
       <DependentUpon>Graphic.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\PictureAddLogo.xaml.cs">
       <DependentUpon>PictureAddLogo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ReplaceTool.xaml.cs">
+      <DependentUpon>ReplaceTool.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ReplaceToolRuleControl.xaml.cs">
+      <DependentUpon>ReplaceToolRuleControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\RoutedEventSample2.xaml.cs">
       <DependentUpon>RoutedEventSample2.xaml</DependentUpon>
@@ -223,6 +236,9 @@
     <Compile Include="Windows\WinformWebBrowser.xaml.cs">
       <DependentUpon>WinformWebBrowser.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\XML2JSON.xaml.cs">
+      <DependentUpon>XML2JSON.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\ZipFile.xaml.cs">
       <DependentUpon>ZipFile.xaml</DependentUpon>
     </Compile>
@@ -289,11 +305,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\FileNameBatch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\Graphic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\PictureAddLogo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ReplaceTool.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ReplaceToolRuleControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -425,6 +453,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\XML2JSON.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\ZipFile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -485,6 +517,7 @@
   <ItemGroup>
     <Content Include="dll\ICSharpCode.SharpZipLib.dll" />
     <Content Include="dll\Microsoft.mshtml.dll" />
+    <Content Include="dll\Newtonsoft.Json.dll" />
     <Content Include="dll\Oracle.ManagedDataAccess.dll" />
     <Resource Include="img\main.ico" />
     <None Include="resources\regex.html">
