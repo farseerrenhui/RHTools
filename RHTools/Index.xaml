@@ -50,6 +50,7 @@
                         <local:IndexButton Content="OracleManagedDataAccess"/>
                         <local:IndexButton Content="SQLiteSample"/>
                         <local:IndexButton Content="GifImage"/>
+                        <local:IndexButton Content="ImageCutter"/>
                         <local:IndexButton Content="WinformWebBrowser"/>
                         <local:IndexButton Content="Splash"/>
                         <local:IndexButton Content="PictureAddLogo"/>

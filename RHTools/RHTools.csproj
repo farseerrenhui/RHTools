@@ -24,6 +24,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,6 +35,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>img\main.ico</ApplicationIcon>
@@ -129,6 +131,9 @@
     </Compile>
     <Compile Include="Windows\Graphic.xaml.cs">
       <DependentUpon>Graphic.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ImageCutter.xaml.cs">
+      <DependentUpon>ImageCutter.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\PictureAddLogo.xaml.cs">
       <DependentUpon>PictureAddLogo.xaml</DependentUpon>
@@ -310,6 +315,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\Graphic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ImageCutter.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
