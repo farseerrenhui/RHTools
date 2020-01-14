@@ -30,16 +30,16 @@ namespace RHTools
 
         string transFolder;
 
-        private void ButtonReplace_Cut(object sender, RoutedEventArgs e)
+        private void ButtonReplace_CutTop(object sender, RoutedEventArgs e)
         {
-            int buttonHeight = int.Parse(TextBoxBottomHeight.Text);
+            int height = int.Parse(TextBoxBottom.Text);
 
             foreach (String item in ListBoxFiles.Items)
             {
                 FileInfo file = new FileInfo(item);
 
                 Bitmap img = new Bitmap(file.FullName);
-                Image newImage = CutOffBottom(img, buttonHeight);
+                Image newImage = CutOffTop(img, height);
 
                 transFolder = file.Directory + "\\trans\\";
                 Directory.CreateDirectory(transFolder);
@@ -48,8 +48,45 @@ namespace RHTools
                 newImage.Dispose();
             }
 
-            MessageBox.Show("Cut Finish");
+            MessageBox.Show("Cut Top Finish");
             System.Diagnostics.Process.Start("explorer", transFolder);
+        }
+
+        private void ButtonReplace_CutBottom(object sender, RoutedEventArgs e)
+        {
+            int height = int.Parse(TextBoxBottom.Text);
+
+            foreach (String item in ListBoxFiles.Items)
+            {
+                FileInfo file = new FileInfo(item);
+
+                Bitmap img = new Bitmap(file.FullName);
+                Image newImage = CutOffBottom(img, height);
+
+                transFolder = file.Directory + "\\trans\\";
+                Directory.CreateDirectory(transFolder);
+
+                newImage.Save(transFolder + file.Name, ImageFormat.Jpeg);
+                newImage.Dispose();
+            }
+
+            MessageBox.Show("Cut Bottom Finish");
+            System.Diagnostics.Process.Start("explorer", transFolder);
+        }
+
+        Image CutOffTop(Bitmap img, int cutHeight)
+        {
+            int newHeight = img.Height - cutHeight;
+            Bitmap newImage = new Bitmap(img.Width, newHeight);
+
+            Graphics g = Graphics.FromImage(newImage);
+            g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.Low;
+            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighSpeed;
+            g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighSpeed;
+            g.DrawImage(img, new Rectangle(0, 0, img.Width, newHeight), new Rectangle(0, cutHeight, img.Width, newHeight), GraphicsUnit.Pixel);
+            g.Dispose();
+
+            return newImage;
         }
 
         Image CutOffBottom(Bitmap img, int cutHeight)

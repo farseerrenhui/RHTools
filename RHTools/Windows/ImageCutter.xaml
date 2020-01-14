@@ -20,16 +20,18 @@
                 <ColumnDefinition/>
                 <!--<ColumnDefinition/>-->
             </Grid.ColumnDefinitions>
-            <TextBlock Text="底部移除高度" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="LightGray"/>
-            <TextBox Name="TextBoxBottomHeight" Text="1800" Background="Transparent" VerticalContentAlignment="Center"/>
+            <TextBlock Text="移除高度(顶部/底部)" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="LightGray"/>
+            <TextBox Name="TextBoxBottom" Text="1800" Background="Transparent" VerticalContentAlignment="Center"/>
         </Grid>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Button Name="ButtonClear" Content="Clear" Click="ButtonReplace_Clear"/>
-            <Button Grid.Column="1" Name="ButtonCut" Content="Cut" Click="ButtonReplace_Cut"/>
+            <Button Grid.Column="1" Name="ButtonCutTop" Content="CutTop" Click="ButtonReplace_CutTop"/>
+            <Button Grid.Column="2" Name="ButtonCutBottom" Content="CutBottom" Click="ButtonReplace_CutBottom"/>
         </Grid>
         <Grid Grid.Row="3">
             <TextBlock Text="亮度与对比对变化" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="LightGray"/>
